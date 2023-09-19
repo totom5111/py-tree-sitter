@@ -259,7 +259,7 @@ class TreeCursor:
         and return True. Otherwise, return False.
         """
         ...
-    def goto_descendant(self, index: int) -> bool:
+    def goto_descendant(self, index: int) -> None:
         """Go to the descendant at the given index.
 
         If the current node has a descendant at the given index, move to the
