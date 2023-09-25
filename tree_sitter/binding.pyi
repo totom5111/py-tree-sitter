@@ -181,7 +181,7 @@ class Node:
         """The number of descendants for a node, including itself"""
         ...
     @property
-    def text(self) -> str:
+    def text(self) -> bytes:
         """The node's text, if tree has not been edited"""
         ...
 
@@ -348,8 +348,14 @@ class Parser:
 class Query:
     """A set of patterns to search for in a syntax tree."""
 
-    # Not implemented yet. Return type is wrong
-    def matches(self, node: Node) -> None:
+    def matches(
+        self,
+        node: Node,
+        start_point: Optional[Tuple[int, int]] = None,
+        end_point: Optional[Tuple[int, int]] = None,
+        start_byte: Optional[int] = None,
+        end_byte: Optional[int] = None,
+    ) -> List[Tuple[int, List[Tuple[Node, str]]]]:
         """Get a list of all of the matches within the given node."""
         ...
     def captures(
@@ -362,9 +368,6 @@ class Query:
     ) -> List[Tuple[Node, str]]:
         """Get a list of all of the captures within the given node."""
         ...
-
-class QueryCapture:
-    pass
 
 class LookaheadIterator(Iterable):
     def reset(self, language: int, state: int) -> None:

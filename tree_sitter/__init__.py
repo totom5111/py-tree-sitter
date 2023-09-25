@@ -11,7 +11,7 @@ from typing import Callable, List, Optional, Union
 
 from tree_sitter.binding import (LookaheadIterator,  # noqa: F401
                                  LookaheadNamesIterator, Node, Parser, Query,
-                                 QueryCapture, Range, Tree, TreeCursor,
+                                 Range, Tree, TreeCursor,
                                  _language_field_count,
                                  _language_field_id_for_name,
                                  _language_field_name_for_id, _language_query,
